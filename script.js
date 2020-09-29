@@ -49,3 +49,18 @@ courses = [
     Instructors: "A. Madooei",
   },
 ];
+
+function populateSelector(selectElmId, data) {
+  const select = document.getElementById(selectElmId);
+  select.innerHTML = "";
+  let item = null;
+  for (let i = 0; i < data.length; i++) {
+    item = document.createElement("option");
+    item.value = data[i]["Name"];
+    item.innerText = data[i]["Name"];
+    select.appendChild(item);
+  }
+}
+
+populateSelector("schools", schools);
+populateSelector("terms", terms);
