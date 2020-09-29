@@ -7,6 +7,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <label for="schools">Choose a school:</label>
+    <select name="schools" id="schools">
+      <option value="all">All</option>
+    </select>
+    <br />
+
+    <label for="terms">Choose a term:</label>
+    <select name="terms" id="terms">
+      <option value="all">All</option>
+    </select>
+    <br />
+
+    <label for="query">Course name:</label>
+    <textarea id="query" name="query" rows="1" cols="20"></textarea>
+    <br />
+
+    <button id="searchBtn">Search</button>
+    <br />
+    <br />
+
+    <div class="result"></div>
     <script src="script.js"></script>
   </body>
 </html>
