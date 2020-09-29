@@ -70,8 +70,13 @@ function search() {
   const school = document.getElementById("schools").value;
   const term = document.getElementById("terms").value;
 
-  console.log(`search for ${query} in the ${school} during ${term}`);
-  showSearchResults(courses);
+  fetch(
+    `https://sis.jhu.edu/api/classes?key=${key}&School=${school}&Term=${term}&CourseTitle=${query}`,
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((data) => showSearchResults(data))
+    .catch((error) => console.log("error", error));
 }
 
 document.getElementById("searchBtn").addEventListener("click", search);
