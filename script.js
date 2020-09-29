@@ -64,3 +64,13 @@ function populateSelector(selectElmId, data) {
 
 populateSelector("schools", schools);
 populateSelector("terms", terms);
+
+function search() {
+  const query = document.getElementById("query").value.trim();
+  const school = document.getElementById("schools").value;
+  const term = document.getElementById("terms").value;
+
+  console.log(`search for ${query} in the ${school} during ${term}`);
+}
+
+document.getElementById("searchBtn").addEventListener("click", search);
