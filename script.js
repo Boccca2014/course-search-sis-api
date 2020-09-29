@@ -89,3 +89,25 @@ function showSearchResults(data) {
   }
   resultDiv.append(list);
 }
+
+const key = "USE_YOUR_KEY"; // trrible practice!
+// should never save API key directly in source code
+// in particular when it can potentily be seen by users
+
+const requestOptions = {
+  method: "GET",
+  redirect: "follow",
+};
+
+fetch(
+  `https://sis.jhu.edu/api/classes/codes/schools?key=${key}`,
+  requestOptions
+)
+  .then((response) => response.json())
+  .then((data) => populateSelector("schools", data))
+  .catch((error) => console.log("error", error));
+
+fetch(`https://sis.jhu.edu/api/classes/codes/terms?key=${key}`, requestOptions)
+  .then((response) => response.json())
+  .then((data) => populateSelector("terms", data))
+  .catch((error) => console.log("error", error));

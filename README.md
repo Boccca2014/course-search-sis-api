@@ -2,8 +2,20 @@
 
 In this module, we will build a simplified version of [John's Hopkins Class Search](https://sis.jhu.edu/classes) web application which makes use of the [SIS API](https://sis.jhu.edu/api).
 
+## Access API Key
 
-# #SIS API & CORS Policy
+Only registered users are permitted to access SIS API. The registration form is available at https://sis.jhu.edu/api. To register you must provide a valid email address.
+
+Once you have registered, you will receive an email with the API Key. The Key is a string of characters like this one: (The one here is a fake one!)
+
+```text
+pJnMRxKD1fFECXFRX1FDXykpLww0Lazk
+```
+
+You must copy your key to line `93` in `script.js`.
+
+
+## SIS API & CORS Policy
 
 The browser blocks our access to the SIS API due to [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) policy.
 
