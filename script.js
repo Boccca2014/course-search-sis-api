@@ -71,6 +71,19 @@ function search() {
   const term = document.getElementById("terms").value;
 
   console.log(`search for ${query} in the ${school} during ${term}`);
+  showSearchResults(courses);
 }
 
 document.getElementById("searchBtn").addEventListener("click", search);
+
+function showSearchResults(data) {
+  const resultDiv = document.querySelector(".result");
+  resultDiv.innerHTML = "";
+  const list = document.createElement("ul");
+  for (let i = 0; i < data.length; i++) {
+    const item = document.createElement("li");
+    item.innerText = `${data[i]["OfferingName"]} (${data[i]["SectionName"]}) ${data[i]["Title"]}`;
+    list.append(item);
+  }
+  resultDiv.append(list);
+}
