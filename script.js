@@ -80,8 +80,10 @@ function showSearchResults(data) {
   const resultDiv = document.querySelector(".result");
   resultDiv.innerHTML = "";
   const list = document.createElement("ul");
+  list.className = "list-group";
   for (let i = 0; i < data.length; i++) {
     const item = document.createElement("li");
+    item.className = "list-group-item";
     item.innerText = `${data[i]["OfferingName"]} (${data[i]["SectionName"]}) ${data[i]["Title"]}`;
     list.append(item);
   }
